@@ -59,14 +59,19 @@ Pluralis node needs `49200` port to be exposed to external connections
 5. Enter the command in **Windows Powershell**, or any terminal client like **Mobaxtem**'s bash terminal and run it.
 6. It prompts you for your ssh public key password (if you set before), then your GPU terminal appears and ready for executing next commands.
 
+## Official guide
+This guide is helping you to run and configure on Vast GPU clouds, for more comprehensive guide or for other GPU clouds, visit the [Official Guide](https://github.com/PluralisResearch/node0?tab=readme-ov-file#stop-the-server)
+
 ---
 
 ## Find exposed ports
+This step helps expose ports on Vast, for other GPU cloud providers check the [Official Guide](https://github.com/PluralisResearch/node0?tab=readme-ov-file#stop-the-server)
+
 **1. Click on instance IP**
 
 <img width="901" height="146" alt="image" src="https://github.com/user-attachments/assets/0e2f32ab-863c-456f-9a2d-c121a73c69d8" />
 
-**2. Write down  Announce port**
+**2. Write down Announce port**
 * In below example, `49200`=host port, `56353`=announce port. You need them in **step 5** of [Install and run Pluralis node](#install-and-run-pluralis-node)
 
 <img width="268" height="129" alt="image" src="https://github.com/user-attachments/assets/640435e2-36de-420f-972d-d1e0443960d7" />
@@ -183,6 +188,13 @@ File start_server.sh is generated. Run ./start_server.sh to join the experiment.
 * Kill screen when outside screen: `screen -XS ceremony quit`
 * screens list: `screen -ls`
 
+**9. Check logs**
+Minimize the screen and check the log file:
+```
+tail -f logs/server.log
+```
+* For full logs, you can open the file in `node0/logs/server.log`
+
 
 ### Option 2: `Docker` installation
 * Skip the whole step if you are running via Option 1: `From Source` installation
@@ -297,16 +309,54 @@ Ensure you backup your `private.key` in a safe place to be able to recover your 
   
  <img width="778" height="429" alt="image" src="https://github.com/user-attachments/assets/a51eebec-b28a-4c31-ba9c-feb6ba738893" />
 
+---
+
+## Stop and restart Node0
+### For `docker` method
+```bash
+# Find the container name or ID
+docker ps
+
+# Stop the server (replace Container_ID)
+docker stop Container_ID
+
+# Remove the container (replace Container_ID)
+docker rm Container_ID
+```
+
+### For `from source` method
+Step 1. If running via screen, then use the following screen commands
+* Minimize screen: `Ctrl`+`A`+`D`
+* Return to screen: `screen -r ceremony`
+* Kill ceremony when inside screen: `Ctrl`+`C`
+* Kill screen when inside screen: `Ctrl`+`D`
+* Kill screen when outside screen: `screen -XS ceremony quit`
+* screens list: `screen -ls`
+
+Step 2. Remove temporary files and free ports:
+```bash
+# Remove socket files
+rm /tmp/hivemind*
+
+# Install lsof (omit sudo if running on cloud providers without sudo access)
+sudo apt-get install lsof
+
+# Kill all processes using host port (default port number is 49200)
+# (omit sudo if running on cloud providers without sudo access)
+for i in $(sudo lsof -t -i tcp:<host_port>); do kill -9 $i; done
+```
+
+Step 3. Restart node0
+```bash
+cd node0
+```
+```bash
+./start_server.sh
+```
 
 ---
 
 ## Troubleshooting
-### Error: `RuntimeError: CUDA error: no kernel image is available for execution on the device`
-It
-* Fix: Reinstall PyTorch with CUDA 13.1+ support (RTX 50-series often requires this for full compatibility)
-```
-pip uninstall torch torchvision torchaudio
-pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128
-```
+There are some troubleshooting notes in the [official guide](https://github.com/PluralisResearch/node0?tab=readme-ov-file#-troubleshooting)
 
 
