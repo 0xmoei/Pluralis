@@ -359,6 +359,10 @@ cd node0
 ---
 
 ## Troubleshooting
+### Error: `CUDA error: no kernel image is available for execution on the device.`
+* Fix: Check your GPU cloud `CUDA` version in your cloud provider dashboard or in terminal using `nvidia-smi`, if CUDA Version >= `13.0`, it's not supported (mostly with 50x RTX GPUs). I will drop a troubleshooting for such GPUs soon**
+
+### Official guide's troubleshooting section
 There are some troubleshooting notes in the [official guide](https://github.com/PluralisResearch/node0?tab=readme-ov-file#-troubleshooting)
 
 
