@@ -24,13 +24,12 @@ nvcc --version
 ```
 
 ## Method 2 - Rent Cloud GPU:
-You can use [Rent and Config GPU Guide](https://github.com/0xmoei/Rent-and-Config-GPU) to get a fully detailed guide or follow the steps below.
 ### Step 1. Rent Vast.ai GPUs
-* 1- Register in [Vast.ai](https://cloud.vast.ai/?ref_id=228875)
-* 2- Create ssh key in your local system (if you don't have already)
- *  Follow Step 1 of this [Guide](https://github.com/0xmoei/Rent-and-Config-GPU), then continue here.
- *  Create an SSH key in Vast.ai by going to `three-lines > Keys > SSH Keys` [here](https://cloud.vast.ai/manage-keys/)
- *  Paste SSH public key created in your local pc in step 2.
+1. Register in [Vast.ai](https://cloud.vast.ai/?ref_id=228875)
+2. Create ssh key in your local system (if you don't have already)
+*  Follow Step 1 of this [Guide](https://github.com/0xmoei/Rent-and-Config-GPU), then continue here.
+*  Create an SSH key in Vast.ai by going to `three-lines > Keys > SSH Keys` [here](https://cloud.vast.ai/manage-keys/)
+*  Paste SSH public key created in your local pc in step 2.
 
 ### Step 2. Create template with `49200` exposed port
 Pluralis node needs `49200` port to be exposed to external connections
@@ -39,15 +38,11 @@ Pluralis node needs `49200` port to be exposed to external connections
 
 ![Screenshot_858 copy](https://github.com/user-attachments/assets/c4de209d-6f35-488f-85bf-c87f5f7f3c8f)
 
+### Step 3. Connect to GPU cloud terminal
+1. Ensure you've chosen a GPU cloud with sufficient **GPU vRAM**, **CPU**, **RAM** and **Disk Space**
+2. Top-up credits with crypto and rent it.
+3. Go to [instances](https://cloud.vast.ai/instances/), refresh the page, click on `key` button.
+4. If you don't see a ssh command in `Direct ssh connect:` section, then you have to press on Add SSH Key.
+5. Enter the command in **Windows Powershell**, or any terminal client like **Mobaxtem**'s bash terminal and run it.
+6. It prompts you for your ssh public key password (if you set before), then your GPU terminal appears.
 
-
-
-* 5- Select Pytorch(Vast) template [here](https://cloud.vast.ai/?ref_id=62897&creator_id=62897&name=PyTorch%20(Vast))
-* 6- Choose a supported GPU (I recommend =24GB GPU vRAM, but Gensyn now supporting even 8GB GPU vRAM)
-* 7- Increase `Disk Space` slidebar to `50GB`
-* 8- Top-up credits with crypto and rent it.
-* 9- Go to [instances](https://cloud.vast.ai/instances/), refresh the page, click on `key` button.
-* 10- If you don't see a ssh command in `Direct ssh connect:` section, then you have to press on Add SSH Key.
-* 11- Copy SSH Command, and Replace `-L 3000:localhost:3000` in front of the command.
-* 12- Enter the command in `Windows Powershell` and run it.
-* 13- It prompts you for your ssh public key password (if you set before), then your GPU terminal appears.
