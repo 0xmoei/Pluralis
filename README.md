@@ -170,6 +170,9 @@ File start_server.sh is generated. Run ./start_server.sh to join the experiment.
 
 <img width="1432" height="145" alt="image" src="https://github.com/user-attachments/assets/a25a97bd-39dd-427a-8a45-8b4914cb5787" />
 
+<img width="1638" height="543" alt="image" src="https://github.com/user-attachments/assets/9d193840-4c62-4185-a939-c5dab1af0490" />
+
+<img width="1209" height="206" alt="image" src="https://github.com/user-attachments/assets/c7781f42-75ca-4383-992d-8b227c1446c4" />
 
 
 **8. Screen commands**
@@ -248,12 +251,63 @@ File start_server.sh is generated. Run ./start_server.sh to join the experiment.
 ./start_server.sh
 ```
 
-<img width="1432" height="145" alt="image" src="https://github.com/user-attachments/assets/a25a97bd-39dd-427a-8a45-8b4914cb5787" />
-
 **6. Check logs**
 ```
 tail -f run.out
 ```
 
+<img width="1432" height="145" alt="image" src="https://github.com/user-attachments/assets/a25a97bd-39dd-427a-8a45-8b4914cb5787" />
+
+<img width="1638" height="543" alt="image" src="https://github.com/user-attachments/assets/9d193840-4c62-4185-a939-c5dab1af0490" />
+
+<img width="1209" height="206" alt="image" src="https://github.com/user-attachments/assets/6663dd89-6f39-427a-be85-d03fa13fe6bf" />
+
 ---
+
+## Visit leaderboard
+Your contribution is tracking in a competetive leaderboard. Search your Huggingface username in [Dashboard Leaderboard](https://dashboard.pluralis.ai/)
+
+<img width="1345" height="694" alt="image" src="https://github.com/user-attachments/assets/a87adef0-2ccb-4ee7-916f-e59d9d75ff15" />
+
+**You can contribute with multiple devices to increase your accounts score!**
+
+---
+
+## Backup `private.key`
+Ensure you backup your `private.key` in a safe place to be able to recover your node
+
+**GPU cloud users:** There are different methods to access to the file explorer of your cloud gpu
+* Option 1 - General method: Use [Mobaxterm](https://mobaxterm.mobatek.net/) terminal client, open a `Bash` terminal and enter your SSH command to connect to your GPU cloud. You'll get a file explorer in the left side of your terminal
+
+<img width="219" height="364" alt="image" src="https://github.com/user-attachments/assets/42b2cfa4-4de4-4e60-b302-e7a07c83db7e" />
+
+* Option 2 - Vast users method: The default SSH command of your GPU instance has `-L 8080:localhost:8080` flag. Get access to your directory by following:
+  ```bash
+  # Enter node0 directory
+  cd node0`
+
+  # Launch ftp server 
+  python3 -m http.server 8080
+  ```
+  * Visit `http://localhost:8080` in browser
+  * If not working, `8080` might be busy. Change `8080:localhost:8080` in Vast SSH command to `8081:localhost:8080`, then run `python3 -m http.server 8080` again, and open `http://localhost:8081` in your browser.
+  
+ <img width="778" height="429" alt="image" src="https://github.com/user-attachments/assets/a51eebec-b28a-4c31-ba9c-feb6ba738893" />
+
+
+
+<img width="864" height="142" alt="image" src="https://github.com/user-attachments/assets/7fc3c78b-02a6-4284-9bf5-d8e79b16a076" />
+
+
+---
+
+## Troubleshooting
+### Error: `RuntimeError: CUDA error: no kernel image is available for execution on the device`
+It
+* Fix: Reinstall PyTorch with CUDA 13.1+ support (RTX 50-series often requires this for full compatibility)
+```
+pip uninstall torch torchvision torchaudio
+pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128
+```
+
 
