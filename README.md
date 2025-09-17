@@ -5,6 +5,8 @@ Node0 is a public training event powered by Protocol Learning's decentralized AI
 
 **Each participant’s contribution is tracking in the dashboard.**
 
+---
+
 ## Hardware Requirements
 Requires a PC or GPU cloud server with Nvidia GPU and a minimum of the following hardware:
 | GPU | RAM     | CPU                     | Disk                      | Exposed port                      |
