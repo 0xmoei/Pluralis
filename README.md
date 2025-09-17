@@ -1,3 +1,10 @@
+<img width="3216" height="907" alt="image" src="https://github.com/user-attachments/assets/3d5ec09c-88c2-4fa8-8425-cc46489eed42" />
+
+# Pluralis: Node0 event
+Node0 is a public training event powered by Protocol Learning's decentralized AI approach. You can join with a 16GB GPU like a 3090 and help train a massive model using your own device.
+
+**Each participant’s contribution is tracking in the dashboard.**
+
 ## Hardware Requirements
 Requires a PC or GPU cloud server with Nvidia GPU and a minimum of the following hardware:
 | GPU | RAM     | CPU                     | Disk                      | Exposed port                      |
@@ -245,3 +252,6 @@ File start_server.sh is generated. Run ./start_server.sh to join the experiment.
 ```
 tail -f run.out
 ```
+
+---
+
