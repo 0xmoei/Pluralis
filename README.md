@@ -4,6 +4,7 @@ Requires a PC or GPU cloud server with Nvidia GPU and a minimum of the following
 | :-------- | :------- | :-------------------------------- | :-------------------------------- |
 | `16 GB vRAM`      | `32 GB` | `16 Core` | `80-100 GB SSD` |
 
+---
 
 ## Enviorement
 
@@ -49,7 +50,26 @@ Pluralis node needs `49200` port to be exposed to external connections
 5. Enter the command in **Windows Powershell**, or any terminal client like **Mobaxtem**'s bash terminal and run it.
 6. It prompts you for your ssh public key password (if you set before), then your GPU terminal appears and ready for executing next commands.
 
-### Find exposed ports
+--
+
+## Find exposed ports
+**1. Click on instance IP**
+
+<img width="901" height="146" alt="image" src="https://github.com/user-attachments/assets/0e2f32ab-863c-456f-9a2d-c121a73c69d8" />
+
+**2. Write down  Announce port**
+* In below example, `49200`=host port, `56353`=announce port. You need them in **step 5** of [Install and run Pluralis node](#install-and-run-pluralis-node)
+
+<img width="268" height="129" alt="image" src="https://github.com/user-attachments/assets/640435e2-36de-420f-972d-d1e0443960d7" />
+
+---
+
+## Get HuggingFace Access token
+**1- Create account in [HuggingFace](https://huggingface.co/)**
+
+**2- Create an Access Token with no specific permissions [here](https://huggingface.co/settings/tokens) and write it down for next steps**
+
+---
 
 ## Dependecies
 Note: Some GPU clouds may not support `sudo` in commands, so you have to omit it.
@@ -84,30 +104,59 @@ source ~/miniconda3/bin/activate
 conda init --all
 ```
 
-## Install and run Pluralis node
+---
+
+## Install and run Pluralis Node0
 ### Option 1: From Source
-**1. Clone repo**
+**1. Open a screen session**
+* It helps you to keep your node running in the background.
+```
+screen -S pluralis
+```
+
+**2. Clone repo**
 ```bash
 git clone https://github.com/PluralisResearch/node0
 cd node0
 ```
 
-**2. Create conda environment**
+**3. Create conda environment**
 ```
 conda create -n node0 python=3.11
 ```
 
-**3. Activate conda environment**
+**4. Activate conda environment**
 ```
 conda activate node0
 ```
 
-**4. Install node0**
+**5. Install Node0**
 ```
 pip install .
 ```
 
-**5. Generate `generate_script.py`**
+**6. Generate `generate_script.py`**
 ```
-python3 generate_script.py --token HF_TOKEN --email EMAIL_ADRESS
+python3 generate_script.py --host_port 49200 --announce_port ANNOUNCE_PORT --token HF_TOKEN --email EMAIL_ADDRESS
 ```
+Replace the following variables with the ones you got in previous steps
+* `49200`: Node's default host port
+* `ANNOUNCE_PORT`: A port which some GPU cloud providers (.e.g Vast) map to the host port for external connection.
+  * If running on Vast GPU cloud, you got it in step: [Find exposed ports](#find-exposed-ports)
+  * If running on WSL or your exposed port is same as your host port, remove this flag `--announce_port ANNOUNCE_PORT`
+* `HF_TOKEN`: Your Huggingface access token
+* `EMAIL_ADDRESS`: Your email address
+
+**7. Start Node0**
+```
+./start_server.sh
+```
+
+**8. Screen commands**
+* Minimize screen: `Ctrl`+`A`+`D`
+* Return to screen: `screen -r ceremony`
+* Kill ceremony when inside screen: `Ctrl`+`C`
+* Kill screen when inside screen: `Ctrl`+`D`
+* Kill screen when outside screen: `screen -XS ceremony quit`
+* screens list: `screen -ls`
+
