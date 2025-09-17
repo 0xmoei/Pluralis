@@ -34,6 +34,8 @@ nvcc --version
 ```
 
 ## Method 2 - Rent Cloud GPU:
+**Note: Check your GPU cloud `CUDA` version in your cloud provider dashboard or in terminal using `nvidia-smi`, if CUDA Version >= `13.0`, it's not supported (mostly with 50x RTX GPUs). I will drop a troubleshooting for such GPUs soon**
+
 ### Step 1. Rent Vast.ai GPUs
 1. Register in [Vast.ai](https://cloud.vast.ai/?ref_id=228875)
 2. Create ssh key in your local system (if you don't have already)
@@ -45,7 +47,7 @@ nvcc --version
 Pluralis node needs `49200` port to be exposed to external connections
 * Method 1: Use my customized templates with exposed ports:
   * [Ubuntu VM](https://cloud.vast.ai/?ref_id=228875&creator_id=228875&name=Ubuntu%2022.04%20VM%20(Pluralis)) (Compatible with both node's `docker` or `from source` installation)
-  * [NVIDIA CUDA](https://cloud.vast.ai/?ref_id=228875&creator_id=228875&name=NVIDIA%20CUDA%20(Pluralis)) (Compatible only with node's `from source` installation)
+  * [NVIDIA CUDA](https://cloud.vast.ai/?ref_id=228875&creator_id=228875&name=NVIDIA%20CUDA%20(Pluralis)) or [Pytorch](https://cloud.vast.ai/?ref_id=228875&creator_id=228875&name=PyTorch%20(Vast)%20(Pluralis)) (Compatible only with node's `from source` installation)
 
 * Method 2: Manually customize template ports on Vast by following the below picture:
 
