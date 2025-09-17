@@ -277,14 +277,17 @@ Your contribution is tracking in a competetive leaderboard. Search your Huggingf
 Ensure you backup your `private.key` in a safe place to be able to recover your node
 
 **GPU cloud users:** There are different methods to access to the file explorer of your cloud gpu
-* Option 1 - General method: Use [Mobaxterm](https://mobaxterm.mobatek.net/) terminal client, open a `Bash` terminal and enter your SSH command to connect to your GPU cloud. You'll get a file explorer in the left side of your terminal
+* **Option 1 - General method:** Use [Mobaxterm](https://mobaxterm.mobatek.net/) terminal client, open a `Bash` terminal and enter your SSH command to connect to your GPU cloud. You'll get a file explorer in the left side of your terminal
 
 <img width="219" height="364" alt="image" src="https://github.com/user-attachments/assets/42b2cfa4-4de4-4e60-b302-e7a07c83db7e" />
 
-* Option 2 - Vast users method: The default SSH command of your GPU instance has `-L 8080:localhost:8080` flag. Get access to your directory by following:
+* **Option 2 - Vast users method:** The default SSH command of your GPU instance has `-L 8080:localhost:8080` flag. Get access to your directory by following the commands:
+
+  <img width="864" height="142" alt="image" src="https://github.com/user-attachments/assets/7fc3c78b-02a6-4284-9bf5-d8e79b16a076" />
+  
   ```bash
   # Enter node0 directory
-  cd node0`
+  cd node0
 
   # Launch ftp server 
   python3 -m http.server 8080
@@ -293,10 +296,6 @@ Ensure you backup your `private.key` in a safe place to be able to recover your 
   * If not working, `8080` might be busy. Change `8080:localhost:8080` in Vast SSH command to `8081:localhost:8080`, then run `python3 -m http.server 8080` again, and open `http://localhost:8081` in your browser.
   
  <img width="778" height="429" alt="image" src="https://github.com/user-attachments/assets/a51eebec-b28a-4c31-ba9c-feb6ba738893" />
-
-
-
-<img width="864" height="142" alt="image" src="https://github.com/user-attachments/assets/7fc3c78b-02a6-4284-9bf5-d8e79b16a076" />
 
 
 ---
