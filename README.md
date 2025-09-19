@@ -33,6 +33,8 @@ nvidia-smi
 nvcc --version
 ```
 
+#
+
 ## Method 2 - Rent Cloud GPU:
 **Note: Check your GPU cloud `CUDA` version in your cloud provider dashboard or in terminal using `nvidia-smi`, if CUDA Version >= `13.0`, it's not supported (mostly with 50x RTX GPUs). I will drop a troubleshooting for such GPUs soon**
 
@@ -94,13 +96,24 @@ Quickpod has 2 options to run node0: Automated or Manual.
 <img width="965" height="350" alt="image" src="https://github.com/user-attachments/assets/3f87bb88-c803-4411-b988-4a0f7e044064" />
 
 
-### Quickpod: Automated
+### Quickpod: Manual
 **Step 1. Create template**
 1. Search for **Pytorch** in [template search](https://console.quickpod.io/templates)
 2. Click on **Clone** to edit the template
 3. In **Docker Options** field, add `-p 49200:49200`, and set the Disk Space size to `100`
 4. Click **Create Template**.
 
+
+**Step 2. Get announce port**
+1. Click **Connect** in your GPU pod
+2. Get your announce port, for example: in `49200-->xxxx`, `xxxx` is announce port
+3. Install by continuing this guide
+
+<img width="631" height="309" alt="image" src="https://github.com/user-attachments/assets/88775adb-33e5-4229-a2ed-0e61a203ea88" />
+
+* In **Quickpod**, you have to omit `sudo` from the commands as it's not supporting it
+
+#
 
 ## Method 3 - Official guide
 This guide is helping you to run and configure on Vast GPU clouds, for more comprehensive guide or for other GPU clouds, visit the [Official Guide](https://github.com/PluralisResearch/node0?tab=readme-ov-file#stop-the-server)
