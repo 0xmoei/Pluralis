@@ -36,7 +36,7 @@ nvcc --version
 ## Method 2 - Rent Cloud GPU:
 **Note: Check your GPU cloud `CUDA` version in your cloud provider dashboard or in terminal using `nvidia-smi`, if CUDA Version >= `13.0`, it's not supported (mostly with 50x RTX GPUs). I will drop a troubleshooting for such GPUs soon**
 
-### Vast cloud provider
+### Option 1: Vast
 **Step 1. Rent a Vast GPU**
 1. Register in [Vast.ai](https://cloud.vast.ai/?ref_id=228875)
 2. Create ssh key in your local system (if you don't have already)
@@ -63,7 +63,7 @@ Pluralis node needs `49200` port to be exposed to external connections
 5. Enter the command in **Windows Powershell**, or any terminal client like **Mobaxtem**'s bash terminal and run it.
 6. It prompts you for your ssh public key password (if you set before), then your GPU terminal appears and ready for executing next commands.
 
-### Quickpod
+### Option 1: Quickpod
 Quickpod is likely an automated setup to instantly run your node0!
 
 **Step 1. Create template**
