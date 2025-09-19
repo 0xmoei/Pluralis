@@ -65,53 +65,7 @@ Pluralis node needs `49200` port to be exposed to external connections
 5. Enter the command in **Windows Powershell**, or any terminal client like **Mobaxtem**'s bash terminal and run it.
 6. It prompts you for your ssh public key password (if you set before), then your GPU terminal appears and ready for executing next commands.
 
-### Option 2: Quickpod
-Quickpod has 2 options to run node0: Automated or Manual.
-
-### Quickpod: Automated
-**Step 1. Create template**
-1. Search for **Pluralis Node∅** in [template search](https://console.quickpod.io/templates)
-2. Click on **Clone** to edit the template
-
-<img width="940" height="457" alt="image" src="https://github.com/user-attachments/assets/8d3dcd41-1992-4cdf-9a1e-119a2f99f77a" />
-
-3. Increase Disk space, and replace `YOUR_HF_TOKEN_HERE` and `YOUR_EMAIL_HERE` with your own values. (Already explained how to get your HF-Huggingface token in the next steps)
-
-<img width="1382" height="897" alt="image" src="https://github.com/user-attachments/assets/9eef7c7b-ed99-4b6d-bafd-521262985f60" />
-
-4. Click **Create Template**.
-
-**Step 2. Choose a GPU pod**
-1. Look for GPUs with min. 16GB vRAM like 4060 ti or 5060 ti
-2. Rent them.
-
-
-**Step 3. Monitor node**
-1. Go to **Pods** to check your active GPU pods
-2. The GPU will install and run GPU automatically by itself
-3. Wait some moment until it finish installations
-4. Click **Logs** and **System** to see the Node0 installation and running logs
-5. `Our servers are currently at full capacity. Retrying in 360 sec` means you are in the queue and you will join soon!
-
-<img width="965" height="350" alt="image" src="https://github.com/user-attachments/assets/3f87bb88-c803-4411-b988-4a0f7e044064" />
-
-
-### Quickpod: Manual
-**Step 1. Create template**
-1. Search for **Pytorch** in [template search](https://console.quickpod.io/templates)
-2. Click on **Clone** to edit the template
-3. In **Docker Options** field, add `-p 49200:49200`, and set the Disk Space size to `100`
-4. Click **Create Template**.
-
-
-**Step 2. Get announce port**
-1. Click **Connect** in your GPU pod
-2. Get your announce port, for example: in `49200-->xxxx`, `xxxx` is announce port
-3. Install by continuing this guide
-
-<img width="631" height="309" alt="image" src="https://github.com/user-attachments/assets/88775adb-33e5-4229-a2ed-0e61a203ea88" />
-
-* In **Quickpod**, you have to omit `sudo` from the commands as it's not supporting it
+### Option 2: testing other providers... 
 
 #
 
