@@ -64,8 +64,9 @@ Pluralis node needs `49200` port to be exposed to external connections
 6. It prompts you for your ssh public key password (if you set before), then your GPU terminal appears and ready for executing next commands.
 
 ### Option 2: Quickpod
-Quickpod is likely an automated setup to instantly run your node0!
+Quickpod has 2 options to run node0: Automated or Manual.
 
+### Quickpod: Automated
 **Step 1. Create template**
 1. Search for **Pluralis Node∅** in [template search](https://console.quickpod.io/templates)
 2. Click on **Clone** to edit the template
@@ -91,6 +92,14 @@ Quickpod is likely an automated setup to instantly run your node0!
 5. `Our servers are currently at full capacity. Retrying in 360 sec` means you are in the queue and you will join soon!
 
 <img width="965" height="350" alt="image" src="https://github.com/user-attachments/assets/3f87bb88-c803-4411-b988-4a0f7e044064" />
+
+
+### Quickpod: Automated
+**Step 1. Create template**
+1. Search for **Pytorch** in [template search](https://console.quickpod.io/templates)
+2. Click on **Clone** to edit the template
+3. In **Docker Options** field, add `-p 49200:49200`, and set the Disk Space size to `100`
+4. Click **Create Template**.
 
 
 ## Method 3 - Official guide
