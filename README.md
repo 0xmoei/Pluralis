@@ -36,14 +36,16 @@ nvcc --version
 ## Method 2 - Rent Cloud GPU:
 **Note: Check your GPU cloud `CUDA` version in your cloud provider dashboard or in terminal using `nvidia-smi`, if CUDA Version >= `13.0`, it's not supported (mostly with 50x RTX GPUs). I will drop a troubleshooting for such GPUs soon**
 
-### Step 1. Rent Vast.ai GPUs
+### Vast cloud provider
+**Step 1. Rent a Vast GPU**
 1. Register in [Vast.ai](https://cloud.vast.ai/?ref_id=228875)
 2. Create ssh key in your local system (if you don't have already)
 *  Follow Step 1 of this [Guide](https://github.com/0xmoei/Rent-and-Config-GPU), then continue here.
 *  Create an SSH key in Vast.ai by going to `three-lines > Keys > SSH Keys` [here](https://cloud.vast.ai/manage-keys/)
 *  Paste SSH public key created in your local pc in step 2.
 
-### Step 2. Create template with `49200` exposed port
+**Step 2. Create template with `49200` exposed port**
+
 Pluralis node needs `49200` port to be exposed to external connections
 * Method 1: Use my customized templates with exposed ports:
   * [Ubuntu VM](https://cloud.vast.ai/?ref_id=228875&creator_id=228875&name=Ubuntu%2022.04%20VM%20(Pluralis)) (Compatible with both node's `docker` or `from source` installation)
@@ -53,7 +55,7 @@ Pluralis node needs `49200` port to be exposed to external connections
 
 ![Screenshot_858 copy](https://github.com/user-attachments/assets/c4de209d-6f35-488f-85bf-c87f5f7f3c8f)
 
-### Step 3. Connect to GPU cloud terminal
+**Step 3. Connect to gpu terminal**
 1. Ensure you've chosen a GPU cloud with sufficient **GPU vRAM**, **CPU**, **RAM** and **Disk Space**
 2. Top-up credits with crypto and rent it.
 3. Go to [instances](https://cloud.vast.ai/instances/), refresh the page, click on `key` button.
@@ -61,7 +63,37 @@ Pluralis node needs `49200` port to be exposed to external connections
 5. Enter the command in **Windows Powershell**, or any terminal client like **Mobaxtem**'s bash terminal and run it.
 6. It prompts you for your ssh public key password (if you set before), then your GPU terminal appears and ready for executing next commands.
 
-## Official guide
+### Quickpod
+Quickpod is likely an automated setup to instantly run your node0!
+
+**Step 1. Create template**
+1. Search for **Pluralis Node∅** in [template search](https://console.quickpod.io/templates)
+2. Click on **Clone** to edit the template
+
+<img width="940" height="457" alt="image" src="https://github.com/user-attachments/assets/8d3dcd41-1992-4cdf-9a1e-119a2f99f77a" />
+
+3. Increase Disk space, and replace `YOUR_HF_TOKEN_HERE` and `YOUR_EMAIL_HERE` with your own values. (Already explained how to get your HF-Huggingface token in the next steps)
+
+<img width="1382" height="897" alt="image" src="https://github.com/user-attachments/assets/9eef7c7b-ed99-4b6d-bafd-521262985f60" />
+
+4. Click **Create Template**.
+
+**Step 2. Choose a GPU pod**
+1. Look for GPUs with min. 16GB vRAM like 4060 ti or 5060 ti
+2. Rent them.
+
+
+**Step 3. Monitor node**
+1. Go to **Pods** to check your active GPU pods
+2. The GPU will install and run GPU automatically by itself
+3. Wait some moment until it finish installations
+4. Click **Logs** and **System** to see the Node0 installation and running logs
+5. `Our servers are currently at full capacity. Retrying in 360 sec` means you are in the queue and you will join soon!
+
+<img width="965" height="350" alt="image" src="https://github.com/user-attachments/assets/3f87bb88-c803-4411-b988-4a0f7e044064" />
+
+
+## Method 3 - Official guide
 This guide is helping you to run and configure on Vast GPU clouds, for more comprehensive guide or for other GPU clouds, visit the [Official Guide](https://github.com/PluralisResearch/node0?tab=readme-ov-file#stop-the-server)
 
 ---
