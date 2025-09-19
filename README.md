@@ -332,12 +332,16 @@ tail -f run.out
 
 ---
 
-## Visit leaderboard
+## Points Dashboard
 Your contribution is tracking in a competetive leaderboard. Search your Huggingface username in [Dashboard Leaderboard](https://dashboard.pluralis.ai/)
 
 <img width="1345" height="694" alt="image" src="https://github.com/user-attachments/assets/a87adef0-2ccb-4ee7-916f-e59d9d75ff15" />
 
-**You can contribute with multiple devices to increase your accounts score!**
+You can also check all the nodes connected to your account by searching it here:
+
+<img width="618" height="436" alt="image" src="https://github.com/user-attachments/assets/74ab7e16-2d42-44e5-8d9e-196ec2754baf" />
+
+### You can contribute with multiple devices to increase your accounts score!
 
 ---
 
