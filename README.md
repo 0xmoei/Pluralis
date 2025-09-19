@@ -63,7 +63,7 @@ Pluralis node needs `49200` port to be exposed to external connections
 5. Enter the command in **Windows Powershell**, or any terminal client like **Mobaxtem**'s bash terminal and run it.
 6. It prompts you for your ssh public key password (if you set before), then your GPU terminal appears and ready for executing next commands.
 
-### Option 1: Quickpod
+### Option 2: Quickpod
 Quickpod is likely an automated setup to instantly run your node0!
 
 **Step 1. Create template**
