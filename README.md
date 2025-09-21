@@ -205,6 +205,7 @@ tail -f logs/server.log
 ```
 * For full logs, you can open the file in `node0/logs/server.log`
 
+#
 
 ### Option 2: `Docker` installation
 * Skip the whole step if you are running via Option 1: `From Source` installation
@@ -338,6 +339,8 @@ docker stop Container_ID
 docker rm Container_ID
 ```
 
+#
+
 ### For `from source` method
 Step 1. If running via screen, then use the following screen commands
 * Minimize screen: `Ctrl`+`A`+`D`
@@ -367,6 +370,34 @@ cd node0
 ```bash
 ./start_server.sh
 ```
+
+---
+
+## Update Node0
+Always make sure your node's repository is updated to the latest version!
+
+### For `from source` method
+```bash
+cd node0
+```
+```bash
+git pull
+```
+Now reinstall and rerun by following **Option 1 (from source)** in [Install and run Pluralis Node0](##install-and-run-pluralis-node0)
+
+#
+
+### For `docker` method
+```bash
+cd node0
+```
+```bash
+git pull
+
+docker build . -t pluralis_node0
+```
+Now reinstall and rerun by following **Option 2 (Docker)** in [Install and run Pluralis Node0](##install-and-run-pluralis-node0)
+
 
 ---
 
