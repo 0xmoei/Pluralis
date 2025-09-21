@@ -82,7 +82,7 @@ This step helps expose ports on Vast, for other GPU cloud providers check the [O
 <img width="901" height="146" alt="image" src="https://github.com/user-attachments/assets/0e2f32ab-863c-456f-9a2d-c121a73c69d8" />
 
 **2. Write down Announce port**
-* In below example, `49200`=host port, `56353`=announce port. You need them in **step 5** of [Install and run Pluralis node](#install-and-run-pluralis-node)
+* In below example, `49200`=host port, `56353`=announce port. You need them in **step 5** of [Install and run Pluralis node](#install-and-run-pluralis-node0)
 
 <img width="268" height="129" alt="image" src="https://github.com/user-attachments/assets/640435e2-36de-420f-972d-d1e0443960d7" />
 
@@ -383,7 +383,7 @@ cd node0
 ```bash
 git pull
 ```
-Now reinstall and rerun by following **Option 1 (from source)** in [Install and run Pluralis Node0](#install-and-run-pluralis-node0)
+Now reinstall and rerun by following **Option 1 (from source)** in [Install and run Pluralis Node0](#option-1-from-source-installation)
 
 #
 
@@ -396,7 +396,7 @@ git pull
 
 docker build . -t pluralis_node0
 ```
-Now reinstall and rerun by following **Option 2 (Docker)** in [Install and run Pluralis Node0](#install-and-run-pluralis-node0)
+Now reinstall and rerun by following **Option 2 (Docker)** in [Install and run Pluralis Node0](#option-2-docker-installation)
 
 
 ---
