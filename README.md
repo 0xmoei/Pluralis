@@ -356,8 +356,8 @@ rm /tmp/hivemind*
 sudo apt-get install lsof
 
 # Kill all processes using host port (default port number is 49200)
-# (omit sudo if running on cloud providers without sudo access)
-for i in $(sudo lsof -t -i tcp:<host_port>); do kill -9 $i; done
+# omit sudo if running on cloud providers without sudo access
+for i in $(sudo lsof -t -i tcp:49200); do kill -9 $i; done
 ```
 
 Step 3. Restart node0
