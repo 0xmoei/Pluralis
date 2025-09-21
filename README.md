@@ -182,6 +182,7 @@ File start_server.sh is generated. Run ./start_server.sh to join the experiment.
 ```
 ./start_server.sh
 ```
+* The `Retrying...` errors mean you are in the queue to join!
 
 <img width="1432" height="145" alt="image" src="https://github.com/user-attachments/assets/a25a97bd-39dd-427a-8a45-8b4914cb5787" />
 
@@ -278,6 +279,7 @@ File start_server.sh is generated. Run ./start_server.sh to join the experiment.
 ```
 tail -f run.out
 ```
+* The `Retrying...` errors mean you are in the queue to join!
 
 <img width="1432" height="145" alt="image" src="https://github.com/user-attachments/assets/a25a97bd-39dd-427a-8a45-8b4914cb5787" />
 
