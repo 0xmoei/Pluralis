@@ -388,7 +388,7 @@ Now, re-run:
 ```bash
 ./start_server.sh
 ```
-Before starting in this method, make sure you activated `conda` by following **Option 1 (from source)** in [Install and run Pluralis Node0](#option-1-from-source-installation)
+Before starting in this method, make sure you recreated and reactivated `conda` by following the steps in **Option 1 (from source)** in [Install and run Pluralis Node0](#option-1-from-source-installation)
 
 #
 
