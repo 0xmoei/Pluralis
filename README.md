@@ -383,7 +383,12 @@ cd node0
 ```bash
 git pull
 ```
-Now reinstall and rerun by following **Option 1 (from source)** in [Install and run Pluralis Node0](#option-1-from-source-installation)
+
+Now, re-run:
+```bash
+./start_server.sh
+```
+Before starting in this method, make sure you activated `conda` by following **Option 1 (from source)** in [Install and run Pluralis Node0](#option-1-from-source-installation)
 
 #
 
@@ -396,8 +401,11 @@ git pull
 
 docker build . -t pluralis_node0
 ```
-Now reinstall and rerun by following **Option 2 (Docker)** in [Install and run Pluralis Node0](#option-2-docker-installation)
 
+Now, re-run:
+```bash
+./start_server.sh
+```
 
 ---
 
