@@ -383,7 +383,7 @@ cd node0
 ```bash
 git pull
 ```
-Now reinstall and rerun by following **Option 1 (from source)** in [Install and run Pluralis Node0](##install-and-run-pluralis-node0)
+Now reinstall and rerun by following **Option 1 (from source)** in [Install and run Pluralis Node0](#install-and-run-pluralis-node0)
 
 #
 
@@ -396,7 +396,7 @@ git pull
 
 docker build . -t pluralis_node0
 ```
-Now reinstall and rerun by following **Option 2 (Docker)** in [Install and run Pluralis Node0](##install-and-run-pluralis-node0)
+Now reinstall and rerun by following **Option 2 (Docker)** in [Install and run Pluralis Node0](#install-and-run-pluralis-node0)
 
 
 ---
