@@ -400,6 +400,7 @@ Now, re-run:
 ```bash
 ./start_server.sh
 ```
+* Or if you got into any issue with quick re-run, you can follow [Stop and Restart Node0](#stop-and-restart-node0) step to cleaning up your temp files, free ports and re-run the node.
 
 #
 
@@ -413,10 +414,12 @@ git pull
 docker build . -t pluralis_node0
 ```
 
-Now, re-run:
+Now, quickly re-run:
 ```bash
 ./start_server.sh
 ```
+* Or if you got into any issue with quick re-run, you can follow [Stop and Restart Node0](#stop-and-restart-node0) step to cleaning up your temp files, free ports and re-run the node.
+
 
 ---
 
