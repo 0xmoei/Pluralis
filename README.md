@@ -328,7 +328,7 @@ Ensure you backup your `private.key` in a safe place to be able to recover your 
 
 ---
 
-## Stop and restart Node0
+## Stop Node0
 ### For `docker` method
 ```bash
 # Find the container name or ID
@@ -365,18 +365,13 @@ sudo apt-get install lsof
 for i in $(sudo lsof -t -i tcp:49200); do kill -9 $i; done
 ```
 
-Step 3. Restart node0
-```bash
-cd node0
-```
-```bash
-./start_server.sh
-```
-
 ---
 
 ## Update Node0
 Always make sure your node's repository is updated to the latest version!
+
+### Step 1: Stop the node
+Follow [Stop Node0](#stop-node0) step to cleaning up your temp files, free ports and re-run the node.
 
 ### For `from source` method
 ```bash
@@ -400,7 +395,6 @@ Now, re-run:
 ```bash
 ./start_server.sh
 ```
-* Or if you got into any issue with quick re-run, you can follow [Stop and Restart Node0](#stop-and-restart-node0) step to cleaning up your temp files, free ports and re-run the node.
 
 #
 
@@ -418,7 +412,6 @@ Now, quickly re-run:
 ```bash
 ./start_server.sh
 ```
-* Or if you got into any issue with quick re-run, you can follow [Stop and Restart Node0](#stop-and-restart-node0) step to cleaning up your temp files, free ports and re-run the node.
 
 
 ---
