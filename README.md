@@ -370,7 +370,7 @@ for i in $(sudo lsof -t -i tcp:49200); do kill -9 $i; done
 ## Update Node0
 Always make sure your node's repository is updated to the latest version!
 
-### Step 1: Stop the node
+### Stop the node
 Follow [Stop Node0](#stop-node0) step to cleaning up your temp files, free ports and re-run the node.
 
 ### For `from source` method
